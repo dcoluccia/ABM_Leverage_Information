@@ -21,6 +21,7 @@ noise = 0
 rho = 0.1
 iterations = 60
 face_value = [0 for j in range(n_corporates)]#[0 for j in range(M)] #
+sim=1
 
 time_periods = [i+1 for i in range(iterations-1)]
 
@@ -29,7 +30,7 @@ P_shocked = []; P_unshocked = []
 R_shocked = []; R_unshocked = []
 Debt_shocked = []; Debt_unshocked = []
 Delta_shocked = []; Delta_unshocked = []
-Model = main.Equity_Debt(n_investors,w,n_corporates,n_equity,initial_value,time_to_maturity,discount_rate,face_value,beta,delta,mi,sigma,gamma,eta,noise,rho,iterations)
+Model = main.Equity_Debt(n_investors,w,n_corporates,n_equity,initial_value,time_to_maturity,discount_rate,face_value,beta,delta,mi,sigma,gamma,eta,noise,rho,iterations,sim)
 Model.populate_returns()
 Model.populate_endowments_holdings()
 Model.onecorporate_temporary_shock()
